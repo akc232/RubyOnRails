@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Create New Branch</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   </head>
+   <body>
+      <div class="container">
+         <br>
+         <div class="links">
+            <a href="/dojo">Home</a>
+         </div><br>
+         <div class="branch_name">
+            <h2>Branch: <%=@dojo.branch%></h2>
+         </div>
+         <hr>
+
+         <h5><%=@student.first_name%> <%=@student.last_name%></h5>
+         <h5>Email: <%=@student.email%></h5>
+      </div>
+   </body>
+</html>
