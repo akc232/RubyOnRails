@@ -20,6 +20,16 @@
             <label for="">First Name:</label><input type="text" name="first" value="<%=@student.first_name %>"><br><br>
             <label for="">Last Name:</label><input type="text" name="last" value="<%=@student.last_name %>"><br><br>
             <label for="">Email:</label><input type="text" name="email" value="<%=@student.email %>"><br><br>
+            <label for="">Branch:</label><select name="dojo">
+               <%@dojos.each do |d|%>
+                  <%if d.id == @dojo.id%>
+
+                  <option selected value="<%=@dojo.id%>"><%=@dojo.branch%></option>
+                  <%else%>
+                  <option value="<%=d.id%>"><%=d.branch%></option>
+                  <%end%>
+               <%end%>
+            </select><br><br>
             <input type="submit" name="" value="Update Student">
          </form>
       </div>

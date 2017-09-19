@@ -9,15 +9,33 @@
       <div class="container">
          <br>
          <div class="links">
-            <a href="/dojo">Home</a>
+            <a href="/dojo">Home</a> | <a href="/dojo/<%=@dojo.id%>/students/<%=@student.id%>/edit">Edit</a>
          </div><br>
          <div class="branch_name">
-            <h2>Branch: <%=@dojo.branch%></h2>
+            <h2><%=@dojo.branch%>'s <%=@student.first_name%> <%=@student.last_name%></h2>
          </div>
-         <hr>
+         <hr><br>
+         <h4>Email: <%=@student.email%></h4><br><br>
+         <div class="cohort">
+            <h5>Cohort</h5>
+            <table class="table">
+               <thead>
+                  <th>First</th>
+                  <th>Last</th>
+                  <th>Email</th>
+               </thead>
+               <tbody>
+                  <%@cohort.each do |student| %>
+                  <tr>
+                     <td><%=student.first_name%></td>
+                     <td><%=student.last_name%></td>
+                     <td><%=student.email%></td>
+                  </tr>
+                  <% end %>
+               </tbody>
+            </table>
 
-         <h5><%=@student.first_name%> <%=@student.last_name%></h5>
-         <h5>Email: <%=@student.email%></h5>
+         </div>
       </div>
    </body>
 </html>

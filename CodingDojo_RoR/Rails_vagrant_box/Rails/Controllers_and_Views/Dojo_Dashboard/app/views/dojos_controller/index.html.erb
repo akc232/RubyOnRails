@@ -13,6 +13,9 @@
          <div class="description">
             <p>Add a branch to the list. Add and edit students attending the branch, and find contact information.</p>
          </div>
+         <% if flash[:notice] %>
+	         <p style="color:green"><%= flash[:notice] %></p>
+         <% end %>
          <br>
          <div class="list">
             <table class = "table">

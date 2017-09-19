@@ -13,6 +13,11 @@
          <div class="title">
             <h3>Create a New Dojo</h3>
          </div>
+         <% if flash[:errors] %>
+            <%flash[:errors].each do |error|%>
+               <p style="color:red"><%= error %></p>
+            <%end%>
+         <%end%>
          <form class="" action="/dojo" method="post">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
             <label for="">Branch:</label><input type="text" name="branch"><br><br>

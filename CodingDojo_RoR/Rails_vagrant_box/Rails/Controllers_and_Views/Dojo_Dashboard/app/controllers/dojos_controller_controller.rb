@@ -6,8 +6,13 @@ class DojosControllerController < ApplicationController
      render 'new'
   end
   def create
-    Dojo.create(branch:params[:branch], street:params[:street], city:params[:city], state:params[:state])
-    redirect_to '/dojo'
+    @dojo = Dojo.create(branch:params[:branch], street:params[:street], city:params[:city], state:params[:state])
+    if @dojo.save
+      redirect_to @dojo, notice: "You have created a new Dojo"
+   else
+      flash[:errors] = @dojo.errors.full_messages
+      redirect_to :back
+    end
   end
   def show
      @dojo = Dojo.find(params[:id])
