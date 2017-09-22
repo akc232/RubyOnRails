@@ -6,13 +6,13 @@
       <th>Author</th>
    </thead>
    <tbody>
+      <%@posts.each do | post |%>
       <tr>
-         <%@posts.each do | post |%>
          <td><%=post.title%></td>
          <td><%=post.content%></td>
          <td><%=post.user.first_name%> <%=post.user.last_name%></td>
-         <% end %>
       </tr>
+      <% end %>
    </tbody>
 </table>
 <% end %>
