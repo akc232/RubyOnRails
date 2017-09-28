@@ -8,7 +8,6 @@ class BankAccount
     @checking = 0
     @saving = 0
     @@bank_accounts += 1
-    # not accessible since we do not have a reader for it
     @interest_rate = 0.01
   end
 
